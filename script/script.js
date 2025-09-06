@@ -1,3 +1,25 @@
+const createElement=(arr)=>{
+  const htmlElement= arr.map((el)=>`<span class="btn">${el}</span>`);
+  return (htmlElement.join(""));
+}
+
+
+
+const manageSpinner = (status) => {
+  if(status==true){
+    document.getElementById('spinner').classList.remove('hidden');
+    document.getElementById('spinner').classList.add('word-container');
+  }
+  else{
+    document.getElementById('spinner').classList.add('hidden');
+    document.getElementById('spinner').classList.remove('word-container');
+  }
+}
+
+
+
+
+
 const loadLessons = () => {
   fetch("https://openapi.programming-hero.com/api/levels/all")
     .then((res) => res.json())
@@ -24,6 +46,7 @@ const displayLevelWord = (words) => {
         <p class="text-xl font-medium text-gray-500 font-bangla rounded-xl ">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
         <h2 class="font-bold text-4xl font-bangla">নেক্সট Lesson এ যান</h2>
       </div>`;
+      manageSpinner(false);
     return;
   }
   words.forEach((word) => {
@@ -42,6 +65,7 @@ const displayLevelWord = (words) => {
     `;
     wordContainer.append(card);
   });
+  manageSpinner(false);
 };
 const removeActive=()=>{
   const lessonButtons= document.querySelectorAll('.lesson-btn')
@@ -77,11 +101,9 @@ const diplayWordDetails=(word)=>{
         </div>
         <div class="space-y-5">
           <h2 class="text-2xl font-bold ">সমার্থক শব্দ গুলো</h2>
-          <p>The kids were eager to open their gifts.</p>
+          
           <div class="flex gap-3">
-            <button class="btn btn-primary text-center border-2 border-red-500 p-2">Enthasiastic</button>
-            <button class="btn btn-primary text-center border-2 border-red-500 p-2">excited</button>
-            <button class="btn btn-primary text-center border-2 border-red-500 p-2">keen</button>
+            <div> ${createElement(word.synonyms)}</div>
           </div>
 
         </div>
