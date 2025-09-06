@@ -93,17 +93,82 @@
       </div>
       <div class="image flex-1"><img src="./assets/hero-student.png" alt=""></div>
     </section>
-
-
-
-
-
+    <!-- vocabularies section -->
     <section>
       <h2 class="text-4xl font-bold mb-8  text-center"><span class="text-sky-400">Let's</span> Learn Vocabularies</h2>
-      <div id="level-container" class="flex gap-5 flex-wrap justify-center hover:cursor-pointer ">
-
+      <div id="level-container" class="flex gap-5 flex-wrap justify-center hover:cursor-pointer">
       </div>
     </section>
+
+
+
+
+
+
+    <section id="word-container" class="bg-gray-100 p-10 w-11/12 mx-auto rounded-2xl my-10 grid grid-cols-3 gap-5 ">
+      <div class="text-center col-span-full space-y-6 py-10">
+        <p class="text-xl font-medium text-gray-500 font-bangla rounded-xl ">আপনি এখনো কোন Lesson Select করেন নি</p>
+        <h2 class="font-bold text-4xl font-bangla">একটি Lesson Select করুন।</h2>
+      </div>
+      
+
+
+    </div>
+    </section>
+
+
+
+
+
+<!-- You can open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_4.showModal()">open modal</button> -->
+    
+    <dialog id="word_modal" class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <div id="details-conatainer">
+
+        <div>
+          <h2 class="text-2xl font-bold">Eager(<i class="fa-solid fa-microphone"></i>:ঈগার সমার্থক শব্দগুলো)</h2>
+
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold">Meaning</h2>
+          <p>আগ্রহী</p>
+
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold">Example</h2>
+          <p>The kids were eager to open their gifts.</p>
+
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold ">সমার্থক শব্দ গুলো</h2>
+          <p>The kids were eager to open their gifts.</p>
+          <div class="flex gap-3">
+            <button class="btn btn-primary text-center">Enthasiastic</button>
+            <button class="btn btn-primary text-center">excited</button>
+            <button class="btn btn-primary text-center">keen</button>
+          </div>
+
+        </div>
+
+
+
+
+
+
+        </div>
+        <div class="modal-action">
+          <form method="dialog">
+<!-- if there is a button, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    
+
 
     <!-- script link -->
     <script src="./script/script.js"></script>
